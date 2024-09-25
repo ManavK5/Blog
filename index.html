@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manav and Aryan's Blog Website!</title>
   <style>
     .headshot {
@@ -46,66 +48,77 @@
       max-width: 600px;
       font-size: 20px;
     }
+
+    /* Additional responsive styling */
+    @media screen and (max-width: 600px) {
+      .content {
+        margin-left: 0;
+        font-size: 18px;
+      }
+      .tab button {
+        font-size: 15px;
+        padding: 10px 12px;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <!-- Navigation Tabs -->
   <div class="tab">
-    <button class="tablinks" onclick="goToPage(event, 'Manav Blog')">Home</button>
-    <button class="tablinks" onclick="openCity(event, 'Aryan Blog')">LinkedIn</button>
-    <button class="tablinks" onclick="openCity(event, 'Socials')">Parks Youth Committee</button>
+    <button class="tablinks" onclick="goToPage('ManavBlog.html')">Manav's Blog</button>
+    <button class="tablinks" onclick="goToPage('AryanBlog.html')">Aryan's Blog</button>
+    <button class="tablinks" onclick="openCity('Socials.html')">Socials</button>
   </div>
 
+  <!-- Manav's Blog -->
   <div id="Manav Blog" class="tabcontent">
-    <a href="Manav's_Blog.html">
-      <h3>Parks Youth Committee</h3>
+    <a href="ManavBlog.html">
+      <h3>Manav's Blog</h3>
     </a>
-    <p>Manav's Blog</p>
+    <p>Check out Manav's latest posts!</p>
   </div>
 
+  <!-- Aryan's Blog -->
   <div id="Aryan Blog" class="tabcontent">
-    <a href="Aryan's_Blog.html">
+    <a href="AryanBlog.html">
       <h3>Aryan's Blog</h3>
     </a>
+    <p>Check out Aryan's latest posts!</p>
   </div>
 
+  <!-- Socials Section -->
   <div id="Socials" class="tabcontent">
     <a href="Socials.html">
-      <h3>LinkedIn</h3>
+      <h3>Socials</h3>
     </a>
-    <p>Our Socials</p>
+    <p>Connect with us on our social platforms!</p>
   </div>
 
-
+  <!-- Intro Section -->
   <div class="content">
-    <p>Hello random viewer, this is a blog Manav and Aryan created during thier study abroad in Barcelona!</p>
-    <p>We just blog our thoughts, experiances, and anything we find interesting... Gym, The Office, Classes, Traveling, anything!!</p>
+    <p>Hello random viewer, this is a blog Manav and Aryan created during their study abroad in Barcelona!</p>
+    <p>We just blog our thoughts, experiences, and anything we find interesting... Gym, The Office, Classes, Traveling, anything!!</p>
   </div>
 
   <script>
+    // Function to navigate to respective blog pages
+    function goToPage(pageUrl) {
+      window.location.href = pageUrl;
+    }
+
+    // Tab handling function (open/hide content)
     function openCity(evt, cityName) {
       var i, tabcontent, tablinks;
       tabcontent = document.getElementsByClassName("tabcontent");
       for (i = 0; i < tabcontent.length; i++) {
-        if (tabcontent[i].id === cityName) {
-          if (tabcontent[i].style.display === "block") {
-            tabcontent[i].style.display = "none";
-          } else {
-            tabcontent[i].style.display = "block";
-          }
-        } else {
-          tabcontent[i].style.display = "none";
-        }
+        tabcontent[i].style.display = (tabcontent[i].id === cityName) ? "block" : "none";
       }
       tablinks = document.getElementsByClassName("tablinks");
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
       }
       evt.currentTarget.className += " active";
-    }
-
-    function goToPage(pageUrl) { 
-      window.location.href = "Blog.html"; 
     }
   </script>
 </body>
