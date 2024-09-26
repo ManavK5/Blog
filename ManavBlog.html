@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manav and Aryan's Blog Website!</title>
+  <style>
+    .headshot {
+      margin-top: 80px;
+      margin-left: -110px;
+      width: 400px;
+      border-radius: 50%;
+    }
+    body {
+      font-family: Arial;
+      background-color: paleturquoise;
+    }
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+    .tab button:hover {
+      background-color: #ddd;
+    }
+    .tab button.active {
+      background-color: #ccc;
+    }
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+    .content {
+      margin-top: 80px;
+      margin-left: 510px;
+      max-width: 600px;
+      font-size: 20px;
+    }
+
+    /* Additional responsive styling */
+    @media screen and (max-width: 600px) {
+      .content {
+        margin-left: 0;
+        font-size: 18px;
+      }
+      .tab button {
+        font-size: 15px;
+        padding: 10px 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Tabs -->
+  <div class="tab">
+    <button class="tablinks" onclick="goToPage('ManavBlog.html')">Manav's Blog</button>
+    <button class="tablinks" onclick="goToPage('AryanBlog.html')">Aryan's Blog</button>
+    <button class="tablinks" onclick="openCity('Socials.html')">Socials</button>
+  </div>
+
+  <!-- Manav's Blog -->
+  <div id="Manav Blog" class="tabcontent">
+    <a href="ManavBlog.html">
+      <h3>Manav's Blog</h3>
+    </a>
+    <p>Check out Manav's latest posts!</p>
+  </div>
+
+  <!-- Aryan's Blog -->
+  <div id="Aryan Blog" class="tabcontent">
+    <a href="AryanBlog.html">
+      <h3>Aryan's Blog</h3>
+    </a>
+    <p>Check out Aryan's latest posts!</p>
+  </div>
+
+  <!-- Socials Section -->
+  <div id="Socials" class="tabcontent">
+    <a href="Socials.html">
+      <h3>Socials</h3>
+    </a>
+    <p>Connect with us on our social platforms!</p>
+  </div>
+
+  <!-- Intro Section -->
+  <div class="content">
+    <p>Hello random viewer, this is a blog Manav and Aryan created during their study abroad in Barcelona!</p>
+    <p>We just blog our thoughts, experiences, and anything we find interesting... Gym, The Office, Classes, Traveling, anything!!</p>
+  </div>
+
+  <script>
+    
+    function goToPage(pageUrl) {
+      window.location.href = pageUrl;
+    }
+   
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = (tabcontent[i].id === cityName) ? "block" : "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      evt.currentTarget.className += " active";
+    }
+  </script>
+</body>
+</html>
