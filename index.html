@@ -4,71 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manav and Aryan's Blog Website!</title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+
   <style>
-    .headshot {
-      margin-top: 80px;
-      margin-left: -110px;
-      width: 400px;
-      border-radius: 50%;
-    }
     body {
-      font-family: Arial;
-      background-color: paleturquoise;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+      color: #333;
     }
+
+    /* Header Styling */
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      color: #333;
+    }
+
+    /* Tab Navigation */
     .tab {
       overflow: hidden;
-      border: 1px solid #ccc;
-      background-color: #f1f1f1;
+      background-color: #333;
+      border-bottom: 2px solid #ddd;
     }
     .tab button {
-      background-color: inherit;
+      background-color: #333;
+      color: white;
       float: left;
       border: none;
       outline: none;
       cursor: pointer;
-      padding: 14px 16px;
+      padding: 16px 20px;
       transition: 0.3s;
-      font-size: 17px;
+      font-size: 18px;
+      font-weight: 600;
     }
     .tab button:hover {
-      background-color: #ddd;
+      background-color: #555;
     }
     .tab button.active {
-      background-color: #ccc;
-    }
-    .tabcontent {
-      display: none;
-      padding: 6px 12px;
-      border: 1px solid #ccc;
-      border-top: none;
-    }
-    .content {
-      margin-top: 20px;
-      margin-left: 50px;
-      max-width: 600px;
-      font-size: 20px;
+      background-color: #ff6347;
     }
 
-    /* Additional responsive styling */
-    @media screen and (max-width: 600px) {
-      .content {
-        margin-left: 0;
-        font-size: 18px;
-      }
+    /* Tab Content */
+    .tabcontent {
+      display: none;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-top: none;
+    }
+
+    /* Main content */
+    .content {
+      margin: 40px auto;
+      max-width: 900px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+
+    .content h3 {
+      color: #ff6347;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 18px;
+    }
+
+    /* Footer Styling */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+      margin-top: 40px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
       .tab button {
-        font-size: 15px;
-        padding: 10px 12px;
+        font-size: 16px;
+        padding: 14px;
+      }
+
+      .content {
+        padding: 15px;
+      }
+
+      .content p {
+        font-size: 16px;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <h1>Welcome to Manav and Aryan's Blog!</h1>
+
   <!-- Navigation Tabs -->
   <div class="tab">
     <button class="tablinks" onclick="goToPage('ManavBlog.html')">Manav's Blog</button>
     <button class="tablinks" onclick="goToPage('AryanBlog.html')">Aryan's Blog</button>
-    <button class="tablinks" onclick="openCity('Socials.html')">Socials</button>
+    <button class="tablinks" onclick="goToPage('Socials.html')">Socials</button>
   </div>
 
   <!-- Manav's Blog -->
@@ -97,16 +141,21 @@
 
   <!-- Intro Section -->
   <div class="content">
+    <h3>About Our Blog</h3>
     <p>Hello random viewer, this is a blog Manav and Aryan created during their study abroad in Barcelona!</p>
     <p>We just blog our thoughts, experiences, and anything we find interesting... Gym, The Office, Classes, Traveling, anything!!</p>
   </div>
+
+  <footer>
+    <p>&copy; 2024 Manav & Aryan's Blog. All Rights Reserved.</p>
+  </footer>
 
   <script>
     // Function to navigate to respective blog pages
     function goToPage(pageUrl) {
       window.location.href = pageUrl;
     }
-    //hello
+
     // Tab handling function (open/hide content)
     function openCity(evt, cityName) {
       var i, tabcontent, tablinks;
